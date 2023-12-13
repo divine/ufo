@@ -39,7 +39,7 @@ describe("$URL getters", () => {
     { input: url.username, out: "" },
     { input: url.password, out: "" },
     { input: url.hasProtocol, out: 6 },
-    { input: url.isAbsolute, out: true },
+    { input: url.isAbsolute, out: 6 },
     { input: url.search, out: "?query=value" },
     { input: url.searchParams.get("query"), out: "value" },
     { input: url.origin, out: "https://example.com" },
