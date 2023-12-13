@@ -19,7 +19,7 @@ describe("$URL constructor", () => {
   ];
 
   for (const t of tests) {
-    test(t.input.toString() + " throw", () => {
+    test(t.input + " throw", () => {
       expect(new $URL(t.input)).toThrowError(t.out);
     });
   }
