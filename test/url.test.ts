@@ -60,7 +60,7 @@ describe("$URL append with protocol", () => {
   const url3 = new $URL("https://example.com/path?query=value#hash");
   const url4 = new $URL("/newpath?newquery=newvalue#newhash");
   url3.append(url4);
-  expect(url1.href).toBe(
+  expect(url3.href).toBe(
     "https://example.com/newpath?newquery=newvalue#newhash"
   );
 });
