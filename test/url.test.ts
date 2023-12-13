@@ -3,8 +3,8 @@ import { $URL } from "../src";
 
 describe("$URL constructor", () => {
   const tests = [
-    // eslint-disable-next-line unicorn/no-null
     {
+      // eslint-disable-next-line unicorn/no-null
       input: null,
       out: "TypeError: URL input should be string received object (null)",
     },
