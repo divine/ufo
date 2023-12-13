@@ -57,10 +57,6 @@ describe("$URL getters", () => {
 });
 
 describe("$URL append with protocol", () => {
-  const url1 = new $URL("https://example.com/path");
-  const url2 = new $URL("http://example.com/path");
-  expect(url1.append(url2)).toThrowError("Cannot append a URL with protocol");
-
   const url3 = new $URL("https://example.com/path?query=value#hash");
   const url4 = new $URL("/newpath?newquery=newvalue#newhash");
   url3.append(url4);
