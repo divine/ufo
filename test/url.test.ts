@@ -51,7 +51,7 @@ describe("$URL getters", () => {
 
   for (const t of tests) {
     test(JSON.stringify(t.input) + " to be " + JSON.stringify(t.out), () => {
-      expect(t.input).toBe(t.out);
+      expect(t.input).toEqual(t.out);
     });
   }
 });
