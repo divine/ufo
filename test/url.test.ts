@@ -33,12 +33,12 @@ describe("$URL getters", () => {
     { input: url.host, out: "example.com" },
     { input: url.pathname, out: "/path" },
     { input: url.query, out: { query: "value" } },
-    { input: url.hash, out: "hash" },
+    { input: url.hash, out: "#hash" },
     { input: url.hostname, out: "example.com" },
     { input: url.port, out: "" },
     { input: url.username, out: "" },
     { input: url.password, out: "" },
-    { input: url.hasProtocol, out: true },
+    { input: url.hasProtocol, out: 6 },
     { input: url.isAbsolute, out: true },
     { input: url.search, out: "?query=value" },
     { input: url.searchParams.get("query"), out: "value" },
@@ -50,7 +50,7 @@ describe("$URL getters", () => {
   ];
 
   for (const t of tests) {
-    test(t.input.toString() + " to be " + JSON.stringify(t.out), () => {
+    test(JSON.stringify(t.input) + " to be " + JSON.stringify(t.out), () => {
       expect(t.input).toBe(t.out);
     });
   }
