@@ -56,11 +56,12 @@ describe("$URL getters", () => {
   }
 });
 
-/*describe("$URL append with protocol", () => {
+/*
+describe("$URL append with protocol", () => {
   const url3 = new $URL("https://example.com/path?query=value#hash");
   const url4 = new $URL("/newpath?newquery=newvalue#newhash");
 
   expect(url3.append(url4).href).toBe(
     "https://example.com/path/newpath?query=value&newquery=newvalue#newhash"
   );
-});*/
+}); */
