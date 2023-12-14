@@ -20,7 +20,7 @@ describe("$URL constructor", () => {
 
   for (const t of tests) {
     test(t.input + " throw", () => {
-      expect(new $URL(t.input)).toThrow(t.out);
+      expect(() => new $URL(t.input)).toThrow(TypeError(t.out));
     });
   }
 });
