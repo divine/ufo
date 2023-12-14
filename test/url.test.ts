@@ -9,6 +9,10 @@ describe("$URL constructor", () => {
       out: "URL input should be string received object (null)",
     },
     {
+      input: undefined,
+      out: "Failed to construct 'URL': Invalid URL",
+    },
+    {
       input: 123,
       out: "URL input should be string received number (123)",
     },
@@ -48,7 +52,10 @@ describe("$URL getters", () => {
     { input: url.fullpath, out: "/path?query=value#hash" },
     { input: url.encodedAuth, out: "john:doe" },
     { input: url.href, out: "https://example.com:1080/path?query=value#hash" },
-    { input: url.toString(), out: "https://example.com:1080/path?query=value#hash" },
+    {
+      input: url.toString(),
+      out: "https://example.com:1080/path?query=value#hash",
+    },
   ];
 
   for (const t of tests) {
@@ -57,3 +64,23 @@ describe("$URL getters", () => {
     });
   }
 });
+
+describe("$URL append", () => {
+  const url = new $URL("https://example.com/path?query=value#hash");
+  const path = new $URL("/newpath?newquery=newvalue#newhash");
+
+  expect(() =>
+      url
+          .append(path)
+          .toBe("https://example.com/newpath?newquery=newvalue#newhash")
+  );
+});
+
+describe("$URL append with protocol", () => {
+  const url1 = new $URL("https://example.com/path");
+  const url2 = new $URL("http://example.com/path");
+
+  expect(() => url1.append(url2).toThrow("Cannot append a URL with protocol"));
+});
+
+
