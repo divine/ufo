@@ -56,6 +56,10 @@ describe("$URL getters", () => {
       input: url.toString(),
       out: "https://john:doe@example.com:1080/path?query=value#hash",
     },
+    {
+      input: url.toJSON(),
+      out: "https://john:doe@example.com:1080/path?query=value#hash",
+    },
   ];
 
   for (const t of tests) {
@@ -70,7 +74,7 @@ describe("$URL append", () => {
   const url2 = new $URL("http://example.com/path");
   const path = new $URL("/newpath?newquery=newvalue#newhash");
 
-  test("append", () => {
+  test("append basic", () => {
     expect(() =>
       url
         .append(path)
