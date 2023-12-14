@@ -67,18 +67,18 @@ describe("$URL getters", () => {
 
 describe("$URL append", () => {
   const url = new $URL("https://example.com/path?query=value#hash");
+  const url2 = new $URL("http://example.com/path");
   const path = new $URL("/newpath?newquery=newvalue#newhash");
 
-  expect(() =>
-    url
-      .append(path)
-      .toBe("https://example.com/newpath?newquery=newvalue#newhash")
-  );
-});
+  test("append", () => {
+    expect(() =>
+      url
+        .append(path)
+        .toBe("https://example.com/newpath?newquery=newvalue#newhash")
+    );
+  });
 
-describe("$URL append with protocol", () => {
-  const url1 = new $URL("https://example.com/path");
-  const url2 = new $URL("http://example.com/path");
-
-  expect(() => url1.append(url2).toThrow("Cannot append a URL with protocol"));
+  test("append with protocol", () => {
+    expect(() => url.append(url2).toThrow("Cannot append a URL with protocol"));
+  });
 });
