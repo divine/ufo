@@ -26,7 +26,9 @@ describe("$URL constructor", () => {
 });
 
 describe("$URL getters", () => {
-  const url = new $URL("https://john:doe@example.com:1080/path?query=value#hash");
+  const url = new $URL(
+    "https://john:doe@example.com:1080/path?query=value#hash"
+  );
 
   const tests = [
     { input: url.protocol, out: "https:" },
@@ -55,13 +57,3 @@ describe("$URL getters", () => {
     });
   }
 });
-
-/*
-describe("$URL append with protocol", () => {
-  const url3 = new $URL("https://example.com/path?query=value#hash");
-  const url4 = new $URL("/newpath?newquery=newvalue#newhash");
-
-  expect(url3.append(url4).href).toBe(
-    "https://example.com/path/newpath?query=value&newquery=newvalue#newhash"
-  );
-}); */
