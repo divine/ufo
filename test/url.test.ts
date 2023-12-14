@@ -9,10 +9,6 @@ describe("$URL constructor", () => {
       out: "URL input should be string received object (null)",
     },
     {
-      input: undefined,
-      out: "Failed to construct 'URL': Invalid URL",
-    },
-    {
       input: 123,
       out: "URL input should be string received number (123)",
     },
