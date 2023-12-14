@@ -40,7 +40,7 @@ describe("$URL getters", () => {
     { input: url.pathname, out: "/path" },
     { input: url.query, out: { query: "value" } },
     { input: url.hash, out: "#hash" },
-    { input: url.hostname, out: "example.com:1080" },
+    { input: url.hostname, out: "example.com" },
     { input: url.port, out: "1080" },
     { input: url.username, out: "john" },
     { input: url.password, out: "doe" },
