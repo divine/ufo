@@ -50,11 +50,11 @@ describe("$URL getters", () => {
     { input: url.encodedAuth, out: "john:doe" },
     {
       input: url.href,
-      out: "http://john:doe@example.com:1080/path?query=value#hash",
+      out: "https://john:doe@example.com:1080/path?query=value#hash",
     },
     {
       input: url.toString(),
-      out: "http://john:doe@example.com:1080/path?query=value#hash",
+      out: "https://john:doe@example.com:1080/path?query=value#hash",
     },
   ];
 
