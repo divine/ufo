@@ -83,6 +83,6 @@ describe("$URL append", () => {
   });
 
   test("append with protocol", () => {
-    expect(() => url.append(url2).toThrow("Cannot append a URL with protocol"));
+    expect(() => url.append(url2).toThrow("Cannot append a URL with protocold"));
   });
 });
