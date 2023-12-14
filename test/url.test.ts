@@ -37,18 +37,18 @@ describe("$URL getters", () => {
     { input: url.query, out: { query: "value" } },
     { input: url.hash, out: "#hash" },
     { input: url.hostname, out: "example.com:1080" },
-    { input: url.port, out: 1080 },
+    { input: url.port, out: "1080" },
     { input: url.username, out: "john" },
     { input: url.password, out: "doe" },
     { input: url.hasProtocol, out: 6 },
     { input: url.isAbsolute, out: 6 },
     { input: url.search, out: "?query=value" },
     { input: url.searchParams.get("query"), out: "value" },
-    { input: url.origin, out: "https://example.com" },
+    { input: url.origin, out: "https://example.com:1080" },
     { input: url.fullpath, out: "/path?query=value#hash" },
     { input: url.encodedAuth, out: "john:doe" },
-    { input: url.href, out: "https://example.com/path?query=value#hash" },
-    { input: url.toString(), out: "https://example.com/path?query=value#hash" },
+    { input: url.href, out: "https://example.com:1080/path?query=value#hash" },
+    { input: url.toString(), out: "https://example.com:1080/path?query=value#hash" },
   ];
 
   for (const t of tests) {
