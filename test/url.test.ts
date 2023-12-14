@@ -70,9 +70,9 @@ describe("$URL append", () => {
   const path = new $URL("/newpath?newquery=newvalue#newhash");
 
   expect(() =>
-      url
-          .append(path)
-          .toBe("https://example.com/newpath?newquery=newvalue#newhash")
+    url
+      .append(path)
+      .toBe("https://example.com/newpath?newquery=newvalue#newhash")
   );
 });
 
@@ -82,5 +82,3 @@ describe("$URL append with protocol", () => {
 
   expect(() => url1.append(url2).toThrow("Cannot append a URL with protocol"));
 });
-
-
