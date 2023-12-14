@@ -52,7 +52,10 @@ describe("$URL getters", () => {
     { input: url.origin, out: "https://example.com:1080" },
     { input: url.fullpath, out: "/path?query=value#hash" },
     { input: url.encodedAuth, out: "john:doe" },
-    { input: url.href, out: "http://john:doe@example.com:1080/path?query=value#hash" },
+    {
+      input: url.href,
+      out: "http://john:doe@example.com:1080/path?query=value#hash",
+    },
     {
       input: url.toString(),
       out: "http://john:doe@example.com:1080/path?query=value#hash",
