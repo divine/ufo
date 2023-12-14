@@ -6,15 +6,15 @@ describe("$URL constructor", () => {
     {
       // eslint-disable-next-line unicorn/no-null
       input: null,
-      out: "TypeError: URL input should be string received object (null)",
+      out: "URL input should be string received object (null)",
     },
     {
       input: 123,
-      out: "TypeError: URL input should be string received number (123)",
+      out: "URL input should be string received number (123)",
     },
     {
       input: {},
-      out: "TypeError: URL input should be string received object ([object Object])",
+      out: "URL input should be string received object ([object Object])",
     },
   ];
 
