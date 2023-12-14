@@ -36,7 +36,8 @@ describe("$URL getters", () => {
 
   const tests = [
     { input: url.protocol, out: "https:" },
-    { input: url.host, out: "example.com" },
+    { input: url.host, out: "example.com:1080" },
+    { input: url.auth, out: "john:doe" },
     { input: url.pathname, out: "/path" },
     { input: url.query, out: { query: "value" } },
     { input: url.hash, out: "#hash" },
@@ -51,10 +52,10 @@ describe("$URL getters", () => {
     { input: url.origin, out: "https://example.com:1080" },
     { input: url.fullpath, out: "/path?query=value#hash" },
     { input: url.encodedAuth, out: "john:doe" },
-    { input: url.href, out: "https://example.com:1080/path?query=value#hash" },
+    { input: url.href, out: "http://john:doe@example.com:1080/path?query=value#hash" },
     {
       input: url.toString(),
-      out: "https://example.com:1080/path?query=value#hash",
+      out: "http://john:doe@example.com:1080/path?query=value#hash",
     },
   ];
 
